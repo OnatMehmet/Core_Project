@@ -21,6 +21,7 @@ namespace BusinessLayer.Concrete
         public void TAdd(About t)
         {
             _about.Insert(t);
+            
 
         }
 

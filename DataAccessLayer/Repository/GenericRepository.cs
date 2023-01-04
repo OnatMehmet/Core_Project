@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,27 +12,40 @@ namespace DataAccessLayer.Repository
     {
         public void Delete(T t)
         {
-            throw new NotImplementedException();
+            using var db = new Context();
+            db.Remove(t);
+            db.SaveChanges();
+
+
         }
 
         public T GetByID(int id)
         {
-            throw new NotImplementedException();
+            using var db = new Context();
+            return db.Set<T>().Find(id);
+
         }
 
         public List<T> GetList()
         {
-            throw new NotImplementedException();
+            using var db = new Context();
+            return db.Set<T>().ToList();    
+
         }
 
         public void Insert(T t)
         {
-            throw new NotImplementedException();
+            using var db = new Context();
+            db.Add(t);
+            db.SaveChanges();
         }
 
         public void Update(T t)
         {
-            throw new NotImplementedException();
+            using var db = new Context();
+            db.Update(t);
+            db.SaveChanges();
+
         }
     }
 }

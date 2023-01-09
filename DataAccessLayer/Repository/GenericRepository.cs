@@ -32,7 +32,6 @@ namespace DataAccessLayer.Repository
             return db.Set<T>().ToList();    
 
         }
-
         public void Insert(T t)
         {
             using var db = new Context();

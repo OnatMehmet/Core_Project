@@ -21,6 +21,11 @@ namespace Core_Project.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult Footer()
+        {
+            return PartialView();
+        }
+
         [HttpGet]
         public PartialViewResult SendMessage()
         {

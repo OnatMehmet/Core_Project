@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class TestimonialManager : IGenericService<Testimonial>
+    public class TestimonialManager : ITestimonialService
     {
         ITestimonial _testimonial;
 

@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#33b5e5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css">
+    <link rel='stylesheet' id='roboto-subset.css-css' href='https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/mdb5/fonts/roboto-subset.css?ver=3.9.0-update.5' type='text/css' media='all' />
+    
+</head>
+<body>
+    <section class="vh-100 bg-image" style="background-color:aliceblue;">
+        
+            <div class="container  h-100">
+                
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-center mb-5">Hesap Oluştur</h2>
+
+                                <form method="post" asp-controller="Account"asp-action="Register" >
+
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1cg" class="form-control form-control-lg">
+                                        <label class="form-label" for="form3Example1cg" style="margin-left: 0px;">Adınız</label>
+                                        <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 71.2px;"></div><div class="form-notch-trailing"></div></div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="form3Example3cg" class="form-control form-control-lg">
+                                        <label class="form-label" for="form3Example3cg" style="margin-left: 0px;">Email</label>
+                                        <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 69.6px;"></div><div class="form-notch-trailing"></div></div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="form3Example4cg" class="form-control form-control-lg">
+                                        <label class="form-label" for="form3Example4cg" style="margin-left: 0px;">Şifre</label>
+                                        <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64px;"></div><div class="form-notch-trailing"></div></div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="form3Example4cdg" class="form-control form-control-lg">
+                                        <label class="form-label" for="form3Example4cdg" style="margin-left: 0px;">Şifre Tekrar</label>
+                                        <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 136px;"></div><div class="form-notch-trailing"></div></div>
+                                    </div>
+
+                                    <div class="form-check d-flex justify-content-center mb-4">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg">
+                                        <label class="form-check-label" for="form2Example3g">
+                                             <a href="#!" class="text-body"><u>Hizmet şartlarındaki</u></a> tüm ifadeleri kabul ediyorum
+                                        </label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary btn-block btn-lg">Kaydol</button>
+                                    </div>
+
+                                <p class="text-center text-muted mt-5 mb-0">Zaten Üyeyim &nbsp;&nbsp; <a href="/Account/Login" class="fw-bold text-body"><u>Giriş Yap</u></a></p>
+
+                                </form>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>  
+       
+    </section>
+
+</body>
+</html>

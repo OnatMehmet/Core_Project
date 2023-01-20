@@ -1,0 +1,78 @@
+﻿@using EntityLayer.Concrete
+@model Portfolio
+@{
+    ViewData["Title"] = "EditPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Proje Düzenleme</h4>
+
+            <form class="form-sample" method="post" asp-controller="Portfolio" asp-action="EditPortfolio" asp-route-PortfolioId="@Model.PortfolioId">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Proje Adı" asp-for="Name">
+                        @Html.ValidationMessageFor(x=>x.Name,"",new {@class="text-danger"})
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Platform Adı" asp-for="Platform">
+                        @Html.ValidationMessageFor(x=>x.Platform,"",new {@class="text-danger"})
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Proje Fiyatı" name="Price" asp-for="Price">
+                        @Html.ValidationMessageFor(x=>x.Price,"",new {@class="text-danger"})
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Durum" name="Durum" asp-for="Durum">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Proje URL" name="ProjectUrl" asp-for="ProjectUrl">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Tamamlanma Oranı" name="Value" asp-for="Value">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Küçük Resim" name="ImageUrl" asp-for="ImageUrl">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Büyük Resim " name="ImageUrl2" asp-for="ImageUrl2">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="1.Üye Resim" name="Image1" asp-for="Image1">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="2.Üye Resim" name="Image2" asp-for="Image2">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="3.Üye Resim" name="Image3" asp-for="Image3">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="4.Üye Resim" name="Image4" asp-for="Image4">
+                    </div>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary mr-2">Proje Güncelle</button>
+                <button href="#" class="btn btn-danger">Kapat</button>
+                <br />
+            </form>
+
+        </div>
+    </div>
+</div>

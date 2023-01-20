@@ -11,9 +11,9 @@ namespace BusinessLayer.Concrete
 {
     public class SocialMediaManager :ISocialMediaService
     {
-        ISocialMedia _socialMedia;
+        ISocialMediaDal _socialMedia;
 
-        public SocialMediaManager(ISocialMedia socialMedia)
+        public SocialMediaManager(ISocialMediaDal socialMedia)
         {
             _socialMedia = socialMedia;
         }

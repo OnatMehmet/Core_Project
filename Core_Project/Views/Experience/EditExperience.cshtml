@@ -1,0 +1,46 @@
+﻿@model Experience
+@{
+    ViewData["Title"] = "EditExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Deneyim Düzenleme</h4>
+
+            <form class="forms-sample" method="post">
+                @Html.HiddenFor(x=>x.ExperienceID)
+                <div class="form-group">
+                    <label>Başlık</label>
+                    @Html.TextBoxFor(x=>x.Name, new{@class ="form-control"})
+                </div>
+
+                <div class="form-group">
+                    <label>Tarih</label>
+                    @Html.TextBoxFor(x=>x.Date, new{@class ="form-control"})
+                </div>
+
+                <div class="form-group">
+                    <label>Resim Ekle</label>
+                    @Html.TextBoxFor(x=>x.ImageUrl, new{@class ="form-control"})
+                   @* <input type="file" name="ImageUrl" class="file-upload-default">
+                    <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükle">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" type="button">Yükle</button>
+                        </span>
+                    </div>*@
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    @Html.TextAreaFor(x=>x.Description,6,3, new{@class ="form-control"})
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Deneyim Güncelle</button>
+                <button href="#" class="btn btn-dark">İptal</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+

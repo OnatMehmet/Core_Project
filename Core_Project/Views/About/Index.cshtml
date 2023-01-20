@@ -1,8 +1,49 @@
-﻿
+﻿@model EntityLayer.Concrete.About
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımda Düzenleme Sayfası</h4>
 
-<h1>About</h1>
+            <form class="forms-sample" method="post">
+                @Html.HiddenFor(x=>x.AboutId)
+                <div class="form-group">
+                    <label>Başlık</label>
+                    @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
+                </div>
 
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    @Html.TextBoxFor(x=>x.Description, new {@class="form-control"})
+                </div>
+
+                <div class="form-group">
+                    <label>Yaş</label>
+                    @Html.TextBoxFor(x=>x.Age, new {@class="form-control"})
+                </div>
+                 <div class="form-group">
+                    <label>Telefon</label>
+                    @Html.TextBoxFor(x=>x.Phone, new {@class="form-control"})
+                </div>
+                 <div class="form-group">
+                    <label>Adres</label>
+                    @Html.TextBoxFor(x=>x.Address, new {@class="form-control"})
+                </div>
+                 <div class="form-group">
+                    <label>Mail</label>
+                    @Html.TextBoxFor(x=>x.Mail, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Resim</label>
+                    @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg mr-2"> Güncelle</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -11,9 +11,9 @@ namespace BusinessLayer.Concrete
 {
     public class AboutManager : IAboutService
     {
-        IAbout _about;
+        IAboutDal _about;
 
-        public AboutManager(IAbout about)
+        public AboutManager(IAboutDal about)
         {
             _about = about;
         }

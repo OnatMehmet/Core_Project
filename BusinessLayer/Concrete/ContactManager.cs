@@ -11,9 +11,9 @@ namespace BusinessLayer.Concrete
 {
     public class ContactManager : IContactService
     {
-        IContact _contact;
+        IContactDal _contact;
 
-        public ContactManager(IContact contact)
+        public ContactManager(IContactDal contact)
         {
             _contact = contact;
         }

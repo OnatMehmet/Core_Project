@@ -11,9 +11,9 @@ namespace BusinessLayer.Concrete
 {
     public class ExperienceManager : IExperienceService
     {
-        IExperience _experience;
+        IExperienceDal _experience;
 
-        public ExperienceManager(IExperience experience)
+        public ExperienceManager(IExperienceDal experience)
         {
             _experience = experience;
         }

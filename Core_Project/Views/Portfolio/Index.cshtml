@@ -1,8 +1,103 @@
-﻿
+﻿@using EntityLayer.Concrete
+@model List<Portfolio>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title float-left">Proje Listesi</h4>
+            <div class="float-right"><a href="/Portfolio/AddPortfolio" class="btn btn-primary">Yeni Proje Ekle</a></div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-light">
 
-<h1>Projeler</h1>
+                        <tr>
+                            <th scope="col" >Proje Adı</th>
+                            <th scope="col" >Ücret</th>
+                            <th scope="col" >Durum</th>
+                            <th scope="col">Users</th>
+                            <th scope="col">Tamamlanma Oranı</th>
+                            <th scope="col">İşlem</th>
+                          @*  <th scope="col"></th>*@
+                        </tr>
+                    </thead>
+                    <tbody class="list">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <a href="#" class="avatar rounded-circle mr-3">
+                                            <img alt="Image placeholder" src="@item.Platform">
+                                        </a>
+                                        <div class="media-body">
+                                            <span class="name mb-0 text-sm">@item.Name</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td class="budget">
+                                    @item.Price
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-warning"></i>
+                                        <span class="status">@item.Durum</span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="avatar-group">
+                                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Yusuf Tompson">
+                                            <img alt="Image placeholder" src="@item.Image1">
+                                        </a>
+                                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Adnan Hadid">
+                                            <img alt="Image placeholder" src="@item.Image2">
+                                        </a>
+                                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ahmet Smith">
+                                            <img alt="Image placeholder" src="@item.Image3">
+                                        </a>
+                                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
+                                            <img alt="Image placeholder" src="@item.Image4">
+                                        </a>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="completion mr-2">@item.Value%</span>
+                                        <div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: @item.Value%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="budget">
+                                    @*Birinci Yöntem*@
+                                    @* <a asp-controller="Skill" asp-action="DeleteSkill" asp-route-id=@item.SkillId class ="btn btn-danger">Sil</a> *@
+                                    <a href="/Portfolio/DeletePortfolio/@item.PortfolioId" id="btnDelete" onclick="return confirm('@item.Name '+' adlı projeyi Silmek istediğinize emin misiniz ?');"  class="btn btn-outline-danger" >Sil</a>
+                                    <a href="/Portfolio/EditPortfolio/@item.PortfolioId" class="btn btn-outline-primary">Güncelle</a>
+                                </td>
+                               @* <td class="text-right">
+                                    <div class="dropdown">
+                                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </td>*@
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 

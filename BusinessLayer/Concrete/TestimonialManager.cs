@@ -11,9 +11,9 @@ namespace BusinessLayer.Concrete
 {
     public class TestimonialManager : ITestimonialService
     {
-        ITestimonial _testimonial;
+        ITestimonialDal _testimonial;
 
-        public TestimonialManager(ITestimonial testimonial)
+        public TestimonialManager(ITestimonialDal testimonial)
         {
             _testimonial = testimonial;
         }

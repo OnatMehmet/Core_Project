@@ -11,9 +11,9 @@ namespace BusinessLayer.Concrete
 {
     public class SkillManager :ISkillService
     {
-        ISkill _skill;
+        ISkillDal _skill;
 
-        public SkillManager(ISkill skill)
+        public SkillManager(ISkillDal skill)
         {
             _skill = skill;
         }
@@ -25,6 +25,7 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Skill t)
         {
+            
             _skill.Delete(t);
         }
 

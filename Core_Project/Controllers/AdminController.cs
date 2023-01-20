@@ -6,9 +6,9 @@ namespace Core_Project.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.v1 = "Default";
-            ViewBag.v2 = "Dashboard";
-            ViewBag.v3 = "Default ";
+            ViewBag.v1 = "Admin";
+            ViewBag.v2 = "Admin";
+            ViewBag.v3 = "Admin ";
             return View();
         }
         public PartialViewResult PartialSideBar()

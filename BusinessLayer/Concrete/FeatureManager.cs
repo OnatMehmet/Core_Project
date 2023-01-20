@@ -11,8 +11,8 @@ namespace BusinessLayer.Concrete
 {
     public class FeatureManager :IFeatureService
     {
-        IFeature _feature;
-        public FeatureManager(IFeature feature)
+        IFeatureDal _feature;
+        public FeatureManager(IFeatureDal feature)
         {
             _feature = feature;
         }

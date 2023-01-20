@@ -1,0 +1,77 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Proje Ekle</h4>
+
+            <form class="forms-sample" method="post">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Proje Adı" name="Name">
+                        @Html.ValidationMessageFor(x=>x.Name,"",new {@class="text-danger"})
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Platform Adı" name="Platform">
+                        @Html.ValidationMessageFor(x=>x.Platform,"",new {@class="text-danger"})
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Proje Fiyatı" name="Price">
+                        @Html.ValidationMessageFor(x=>x.Price,"",new {@class="text-danger"})
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Durum" name="Durum">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Proje URL" name="ProjectUrl">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Tamamlanma Oranı" name="Value">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Küçük Resim" name="ImageUrl">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Büyük Resim " name="ImageUrl2">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="1.Üye Resim" name="Image1">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="2.Üye Resim" name="Image2">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="3.Üye Resim" name="Image3">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="4.Üye Resim" name="Image4">
+                    </div>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Proje Ekle</button>
+                <button href="#" class="btn btn-danger">İptal</button>
+                <br />
+            </form>
+
+        </div>
+    </div>
+</div>

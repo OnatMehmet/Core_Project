@@ -12,9 +12,9 @@ namespace BusinessLayer.Concrete
     
     public class PortfolioManager : IPortfolioService
     {
-        IPortfolio _portfolio;
+        IPortfolioDal _portfolio;
 
-        public PortfolioManager(IPortfolio portfolio)
+        public PortfolioManager(IPortfolioDal portfolio)
         {
             _portfolio = portfolio;
         }

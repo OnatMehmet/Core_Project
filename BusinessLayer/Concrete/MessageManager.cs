@@ -11,9 +11,9 @@ namespace BusinessLayer.Concrete
 {
     public class MessageManager : IMessageService
     {
-        IMessage _message;
+        IMessageDal _message;
 
-        public MessageManager(IMessage message)
+        public MessageManager(IMessageDal message)
         {
             _message = message;
         }
